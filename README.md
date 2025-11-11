@@ -50,21 +50,21 @@ Open your browser
 Navigate to http://localhost:3000
 
 🎯 Project Structure
-text
-src/
-├── app/                 # Next.js app router pages
-├── components/
-│   ├── ui/             # Reusable UI components
-│   ├── add-modal.tsx   # Add food modal
-│   ├── edit-modal.tsx  # Edit food modal
-│   ├── delete-modal.tsx # Delete confirmation modal
-│   ├── food-card.tsx   # Food item card component
-│   └── footer.tsx      # Site footer
-├── services/
-│   └── api.ts          # API service layer
-├── types/
-│   └── index.ts        # TypeScript type definitions
-└── __tests__/          # Test files
+        text
+        src/
+         ├── app/ # Next.js App Router pages
+         ├── components/
+         │ ├── ui/ # Reusable UI components
+         │ ├── add-modal.tsx # Add food modal
+         │ ├── edit-modal.tsx # Edit food modal
+         │ ├── delete-modal.tsx # Delete confirmation modal
+         │ ├── food-card.tsx # Food item card component
+         │ └── footer.tsx # Site footer
+         ├── services/
+         │ └── api.ts # API service layer
+         ├── types/
+         │ └── index.ts # TypeScript type definitions
+         └── tests/ # Test files
 
 🔧 API Integration
 FoodWagen integrates with a mock API providing full CRUD operations:
@@ -161,10 +161,5 @@ text
 - ✅ Professional tone and structure
 - ✅ Clear call-to-action for live demo
 - ✅ Better visual separation between sections
-
-
-This README now looks professional and follows GitHub best practices!
-please write in one well organized form cuz i just want to copy and past it
-markdown
 
 
