@@ -86,10 +86,10 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
               <DropdownMenuItem onClick={() => onEdit(food)} data-test-id="food-edit-btn" className='text-orange-600 bg-gray-100 hover:text-black hover:bg-gray-200 border-b border-gray-300'>
-                Edit
+              Edit
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => onDelete(food)} data-test-id="food-delete-btn" className="text-red-600 hover:text-black hover:bg-gray-200">
-                Delete
+              Delete
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
