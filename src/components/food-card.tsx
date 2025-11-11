@@ -21,37 +21,30 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
   const foodRating = food?.food_rating ?? 0
   const foodImage = food?.food_image || "/placeholder-food.jpg"
   const restaurantName = food?.restaurant_name || "Unknown Restaurant"
-  const restaurantImage = food?.restaurant_image || food?.restaurant_logo || "/placeholder-restaurant.jpg"
+  const restaurantImage = food?.restaurant_image || "/placeholder-restaurant.jpg" // FIXED: Removed restaurant_logo
   const restaurantStatus = food?.restaurant_status || "Closed"
 
   return (
     <article
       className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:scale-103 transition-transform transition-shadow duration-200"
-
       data-test-id="food-card"
     >
       {/* Image Container with Price Badge */}
       <div className="relative overflow-hidden aspect-square">
-        
         {/* Food Image */}
-          <img
-            src={foodImage}
-            alt={foodName}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "/diverse-food-spread.png"
-            }}
-          />
+        <img
+          src={foodImage}
+          alt={foodName}
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = "/diverse-food-spread.png"
+          }}
+        />
 
-          
-          <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-2 rounded-lg font-bold text-sm flex items-center gap-1">
-            <SellIcon style={{ fontSize: 20, color: '#fff' }} />${displayPrice}
-          </div>
-  
-     
-
+        <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-2 rounded-lg font-bold text-sm flex items-center gap-1">
+          <SellIcon style={{ fontSize: 20, color: '#fff' }} />${displayPrice}
+        </div>
       </div>
-
 
       {/* Card Content */}
       <div className="p-4">
@@ -69,37 +62,30 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
             />
             <div className=''>
               {/* Food Name */}
-                <div>
-                    <h3 className="font-bold text-gray-900 text-sm truncate" title={foodName}>
-                      {foodName.length > 24 ? foodName.slice(0, 23) + "..." : foodName}
-                     </h3>
-                </div>
-                
-                <div
+              <div>
+                <h3 className="font-bold text-gray-900 text-sm truncate" title={foodName}>
+                  {foodName.length > 24 ? foodName.slice(0, 23) + "..." : foodName}
+                </h3>
+              </div>
+
+              <div
                 className="text-yellow-500 text-sm font-medium flex-shrink-0 flex items-center gap-1"
                 data-test-id="food-rating"
               >
                 ⭐ {foodRating.toFixed(1)}
               </div>
-          </div>
-
-          {/* Rating */}
-
-
-
             </div>
-            
+          </div>
 
           {/* Three-dot Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="sm" className="h-1 w-2 p-0 hover:bg-gray-100 flex-shrink-0">
                 <MoreVertIcon className="text-gray-600 text-lg cursor-pointer mt-[-16px]" />
-
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => onEdit(food)} data-test-id="food-edit-btn " className='text-orange-600 bg-gray-100 hover:text-black hover:bg-gray-200 border-b border-gray-300'>
+              <DropdownMenuItem onClick={() => onEdit(food)} data-test-id="food-edit-btn" className='text-orange-600 bg-gray-100 hover:text-black hover:bg-gray-200 border-b border-gray-300'>
                 Edit
               </DropdownMenuItem>
               <DropdownMenuItem onClick={() => onDelete(food)} data-test-id="food-delete-btn" className="text-red-600 hover:text-black hover:bg-gray-200">
@@ -122,7 +108,3 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
     </article>
   )
 }
-
-
-
-
