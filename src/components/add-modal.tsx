@@ -113,7 +113,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
               className="food-input bg-gray-100 text-black border-0"
             />
             {errors.food_name && (
-              <p id="food_name-error" className="text-sm text-destructive">
+              <p id="food_name-error" className="text-sm text-destructive text-red-400">
                 {errors.food_name}
               </p>
             )}
@@ -135,7 +135,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
               className="food-input bg-gray-100 text-black border-0"
             />
             {errors.food_rating && (
-              <p id="food_rating-error" className="text-sm text-destructive">
+              <p id="food_rating-error" className="text-sm text-destructive text-red-400">
                 {errors.food_rating}
               </p>
             )}
@@ -154,7 +154,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
               className="food-input bg-gray-100 text-black border-0"
             />
             {errors.food_image && (
-              <p id="food_image-error" className="text-sm text-destructive">
+              <p id="food_image-error" className="text-sm text-destructive text-red-400">
                 {errors.food_image}
               </p>
             )}
@@ -172,7 +172,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
               className="food-input bg-gray-100 text-black border-0"
             />
             {errors.restaurant_name && (
-              <p id="restaurant_name-error" className="text-sm text-destructive">
+              <p id="restaurant_name-error" className="text-sm text-destructive text-red-400">
                 {errors.restaurant_name}
               </p>
             )}
@@ -191,7 +191,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
               className="food-input bg-gray-100 text-black border-0"
             />
             {errors.restaurant_logo && (
-              <p id="restaurant_logo-error" className="text-sm text-destructive">
+              <p id="restaurant_logo-error" className="text-sm text-destructive text-red-400">
                 {errors.restaurant_logo}
               </p>
             )}
@@ -201,7 +201,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
           <div className="space-y-2">
             <Select value={formData.restaurant_status} onValueChange={handleSelectChange}>
               <SelectTrigger id="add_restaurant_status" className="food-input bg-gray-100 text-black border-0">
-                <SelectValue placeholder="Select status" />
+                <SelectValue placeholder="Restaurant Status(open/close)" />
               </SelectTrigger>
               <SelectContent>
                 {/* Remove the empty value SelectItem */}
@@ -210,7 +210,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
               </SelectContent>
             </Select>
             {errors.restaurant_status && (
-              <p id="restaurant_status-error" className="text-sm text-destructive">
+              <p id="restaurant_status-error" className="text-sm text-destructive text-red-400">
                 {errors.restaurant_status}
               </p>
             )}
@@ -218,7 +218,7 @@ export function AddModal({ isOpen, onClose, onSuccess }: AddModalProps) {
 
           <DialogFooter className="flex justify-between w-full px-0">
             <Button type="submit" disabled={isSubmitting} data-test-id="food-add-submit" className="bg-[#FFB30E] px-22 rounded-lg hover:bg-gray-100 hover:border hover:border-[#FFB30E] hover:text-black">
-              {isSubmitting ? "Adding Food..." : "Add Food"}
+              {isSubmitting ? "Adding Food..." : "Add "}
             </Button>
             <Button type="button" variant="outline" onClick={onClose} disabled={isSubmitting} className="px-22 rounded-lg bg-white border border-[#FFB30E] text-black hover:bg-gray-100 hover:border hover:border-[#FFB30E] hover:bg-[#FFB30E]">
               Cancel

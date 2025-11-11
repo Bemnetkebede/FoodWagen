@@ -93,16 +93,18 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md w-full">
+      <DialogContent className="max-w-lg w-full bg-white  my-3">
         <DialogHeader>
-          <DialogTitle>Edit Food Item</DialogTitle>
-          <DialogDescription>Update the details of the food item below.</DialogDescription>
+          <DialogTitle className="text-[#FFB30E] text-center text-xl font-bold my-[-15px]">Edit Meal</DialogTitle>
+          {/* <DialogDescription>Update the details of the food item below.</DialogDescription> */}
         </DialogHeader>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-2 mt-0 mt-[-10px]">
           {/* Food Name */}
-          <div className="space-y-2">
-            <Label htmlFor="food_name">Food Name</Label>
+          <div className="">
+            <Label htmlFor="food_name" className=" text-gray-500 !important">
+              Food Name
+            </Label>   
             <Input
               id="food_name"
               name="food_name"
@@ -110,10 +112,10 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
               value={formData.food_name || ""}
               onChange={handleChange}
               data-test-id="food-edit-name"
-              className="food-input"
+              className="food-input bg-gray-100 text-black border-0 mt-1"
             />
             {errors.food_name && (
-              <p id="food_name-error" className="text-sm text-destructive">
+              <p id="food_name-error" className="text-sm text-destructive text-red-400">
                 {errors.food_name}
               </p>
             )}
@@ -121,7 +123,7 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
 
           {/* Food Rating */}
           <div className="space-y-2">
-            <Label htmlFor="food_rating">Rating (1-5)</Label>
+            <Label htmlFor="food_rating" className="text-gray-500 !important">Rating (1-5)</Label>
             <Input
               id="food_rating"
               name="food_rating"
@@ -133,10 +135,10 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
               value={formData.food_rating || ""}
               onChange={handleChange}
               data-test-id="food-edit-rating"
-              className="food-input"
+              className="food-input bg-gray-100 text-black border-0 mt-1"
             />
             {errors.food_rating && (
-              <p id="food_rating-error" className="text-sm text-destructive">
+              <p id="food_rating-error" className="text-sm text-destructive text-red-400">
                 {errors.food_rating}
               </p>
             )}
@@ -144,7 +146,7 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
 
           {/* Food Image */}
           <div className="space-y-2">
-            <Label htmlFor="food_image">Food Image URL</Label>
+            <Label htmlFor="food_image" className="text-gray-500 !important">Food Image URL</Label>
             <Input
               id="food_image"
               name="food_image"
@@ -153,10 +155,10 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
               value={formData.food_image || ""}
               onChange={handleChange}
               data-test-id="food-edit-image"
-              className="food-input"
+              className="food-input bg-gray-100 text-black border-0 mt-1"
             />
             {errors.food_image && (
-              <p id="food_image-error" className="text-sm text-destructive">
+              <p id="food_image-error" className="text-sm text-destructive text-red-400">
                 {errors.food_image}
               </p>
             )}
@@ -164,7 +166,7 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
 
           {/* Restaurant Name */}
           <div className="space-y-2">
-            <Label htmlFor="restaurant_name">Restaurant Name</Label>
+            <Label htmlFor="restaurant_name" className="text-gray-500 !important">Restaurant Name</Label>
             <Input
               id="restaurant_name"
               name="restaurant_name"
@@ -172,18 +174,18 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
               value={formData.restaurant_name || ""}
               onChange={handleChange}
               data-test-id="food-edit-restaurant-name"
-              className="food-input"
+              className="food-input bg-gray-100 text-black border-0 mt-1"
             />
             {errors.restaurant_name && (
-              <p id="restaurant_name-error" className="text-sm text-destructive">
+              <p id="restaurant_name-error" className="text-sm text-destructive text-red-400">
                 {errors.restaurant_name}
               </p>
             )}
           </div>
 
           {/* Restaurant Logo */}
-          <div className="space-y-2">
-            <Label htmlFor="restaurant_logo">Restaurant Logo URL</Label>
+          <div className="">
+            <Label htmlFor="restaurant_logo" className="text-gray-500 !important">Restaurant Logo URL</Label>
             <Input
               id="restaurant_logo"
               name="restaurant_logo"
@@ -192,10 +194,10 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
               value={formData.restaurant_logo || ""}
               onChange={handleChange}
               data-test-id="food-edit-restaurant-logo"
-              className="food-input"
+              className="food-input bg-gray-100 text-black border-0  mt-1"
             />
             {errors.restaurant_logo && (
-              <p id="restaurant_logo-error" className="text-sm text-destructive">
+              <p id="restaurant_logo-error" className="text-sm text-destructive text-red-400">
                 {errors.restaurant_logo}
               </p>
             )}
@@ -203,9 +205,9 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
 
           {/* Restaurant Status */}
           <div className="space-y-2">
-            <Label htmlFor="restaurant_status">Restaurant Status</Label>
+            <Label htmlFor="restaurant_status" className=" mb -3 text-gray-500 !important">Restaurant Status</Label>
             <Select value={formData.restaurant_status || ""} onValueChange={handleSelectChange}>
-              <SelectTrigger id="restaurant_status" className="food-input">
+              <SelectTrigger id="restaurant_status" className="food-input bg-gray-300">
                 <SelectValue placeholder="Select status" />
               </SelectTrigger>
               <SelectContent>
@@ -214,18 +216,21 @@ export function EditModal({ food, isOpen, onClose, onSuccess }: EditModalProps) 
               </SelectContent>
             </Select>
             {errors.restaurant_status && (
-              <p id="restaurant_status-error" className="text-sm text-destructive">
+              <p id="restaurant_status-error" className="text-sm text-destructive text-red-400">
                 {errors.restaurant_status}
               </p>
             )}
           </div>
 
-          <DialogFooter>
-            <Button type="button" variant="outline" onClick={onClose} disabled={isSubmitting}>
-              Cancel
+          <DialogFooter className="">
+            
+            <Button type="submit" disabled={isSubmitting} data-test-id="food-edit-submit"
+            className="bg-[#FFB30E] px-25 rounded-lg hover:bg-gray-100 hover:border hover:border-[#FFB30E] hover:text-black">
+              {isSubmitting ? "Updating Food..." : "Save"}
             </Button>
-            <Button type="submit" disabled={isSubmitting} data-test-id="food-edit-submit">
-              {isSubmitting ? "Updating Food..." : "Update Food"}
+            <Button type="button" variant="outline" onClick={onClose} disabled={isSubmitting}
+            className="px-22 rounded-lg bg-white border border-[#FFB30E] text-black hover:bg-gray-100 hover:border hover:border-[#FFB30E] hover:bg-[#FFB30E]">
+              Cancel
             </Button>
           </DialogFooter>
         </form>

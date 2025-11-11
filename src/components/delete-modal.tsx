@@ -42,10 +42,10 @@ export function DeleteModal({ food, isOpen, onClose, onSuccess }: DeleteModalPro
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-md w-full">
+      <DialogContent className="max-w-lg w-full bg-white">
         <DialogHeader>
-          <DialogTitle>Delete Meal</DialogTitle>
-          <DialogDescription>
+          <DialogTitle className="text-[#FFB30E] text-center text-xl font-bold">Delete Meal</DialogTitle>
+          <DialogDescription className="text-gray-400 text-sm">
             Are you sure you want to delete this Meal? Action can not be reversed.
           </DialogDescription>
         </DialogHeader>
@@ -56,24 +56,25 @@ export function DeleteModal({ food, isOpen, onClose, onSuccess }: DeleteModalPro
           </div>
         )}
 
-        <DialogFooter className="flex flex-col sm:flex-row gap-2">
+        <DialogFooter className="flex justify-between w-full mt-4  gap-2 pr-10">
           <Button
             type="button"
             variant="outline"
             onClick={onClose}
             disabled={isDeleting}
-            className="sm:order-2"
+            className="font-bold sm:order-2  bg-red-500 hover:bg-red-600 text-white sm:order-1 px-22 rounded-lg bg-white border border-[#FFB30E] text-black hover:bg-gray-100 hover:border hover:border-[#FFB30E] hover:bg-[#FFB30E]"
           >
-            Yes
+            cancle
           </Button>
           <Button
             type="button"
             onClick={handleDelete}
             disabled={isDeleting}
             data-test-id="food-delete-confirm"
-            className="bg-red-500 hover:bg-red-600 text-white sm:order-1"
+            
+            className="bg-[#FFB30E] px-22 rounded-lg hover:bg-gray-100 hover:border hover:border-[#FFB30E] hover:text-black"
           >
-            {isDeleting ? "Deleting..." : "Delete Food"}
+            {isDeleting ? "Deleting..." : "Yes"}
           </Button>
         </DialogFooter>
       </DialogContent>
