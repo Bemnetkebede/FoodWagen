@@ -21,7 +21,7 @@ A modern, responsive food management web application built with Next.js and Type
 
 ## 🚀 Live Demo
 
-[**View Live Site**](https://your-deployment-link.vercel.app)
+[**View Live Site**](https://food-wagen-xjj2.vercel.app/)
 
 ## 🛠️ Tech Stack
 
