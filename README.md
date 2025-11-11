@@ -39,34 +39,37 @@ A modern, responsive food management web application built with Next.js and Type
    git clone https://github.com/your-username/foodwagen.git
    cd foodwagen
      Install dependencies
+2, **Install dependencies**
+      npm install
 
-bash
-npm install
-Run the development server
+3, **Run the development server**
+   npm run dev
+   bash
+   npm install
+   Run the development server
 
-bash
-npm run dev
-Open your browser
-Navigate to http://localhost:3000
+   bash
+   npm run dev
+   Open your browser
+   Navigate to http://localhost:3000
 
 🎯 Project Structure
-        text
-        src/
-         ├── app/ # Next.js App Router pages
+       src/
+         ├── app/                 # Next.js App Router pages
          ├── components/
-         │ ├── ui/ # Reusable UI components
-         │ ├── add-modal.tsx # Add food modal
-         │ ├── edit-modal.tsx # Edit food modal
-         │ ├── delete-modal.tsx # Delete confirmation modal
-         │ ├── food-card.tsx # Food item card component
-         │ └── footer.tsx # Site footer
+         │   ├── ui/             # Reusable UI components
+         │   ├── add-modal.tsx   # Add food modal
+         │   ├── edit-modal.tsx  # Edit food modal
+         │   ├── delete-modal.tsx # Delete confirmation modal
+         │   ├── food-card.tsx   # Food item card component
+         │   └── footer.tsx      # Site footer
          ├── services/
-         │ └── api.ts # API service layer
+         │   └── api.ts          # API service layer
          ├── types/
-         │ └── index.ts # TypeScript type definitions
-         └── tests/ # Test files
+         │   └── index.ts        # TypeScript type definitions
+         └── tests/              # Test files
 
-🔧 API Integration
+##🔧 API Integration
 FoodWagen integrates with a mock API providing full CRUD operations:
 
 Method	Endpoint	Description
@@ -75,24 +78,24 @@ POST	/Food	Create new food item
 PUT	/Food/[id]	Update existing food item
 DELETE	/Food/[id]	Remove food item
 GET	/Food?name=[searchParam]	Search foods by name
-✅ Validation & Error Handling
+
+##✅ Validation & Error Handling
 Form Validation Rules
-Required Fields: Food name, rating, image URL, restaurant details
+- ** Required Fields: Food name, rating, image URL, restaurant details
+- ** Rating Range: 1-5 with decimal support
 
-Rating Range: 1-5 with decimal support
+- ** URL Validation: Proper image URL format
 
-URL Validation: Proper image URL format
+- ** Status Options: "Open Now" or "Closed" only
 
-Status Options: "Open Now" or "Closed" only
-
-Error Messages
+## Error Messages
 Clear, user-friendly error messages
 
 Real-time validation feedback
 
 Proper error element IDs (food-name-error, food-rating-error, etc.)
 
-🎨 Design Features
+## 🎨 Design Features
 Modern UI - Clean, card-based design following Figma specifications
 
 Hover Animations - Smooth 150ms ease-out transitions
@@ -103,38 +106,34 @@ Consistent Styling - Orange (#FFB30E) primary color theme
 
 Typography - Clear hierarchy with proper font weights
 
-🧪 Testing
-Comprehensive test coverage including:
+## 🧪 Testing
+- **Comprehensive test coverage including:
 
-Component Rendering - Verify UI components render correctly
+- **Component Rendering - Verify UI components render correctly
 
-User Interactions - Test button clicks and form submissions
+- **User Interactions - Test button clicks and form submissions
 
-API Mocking - Simulate successful and failed API requests
+- **API Mocking - Simulate successful and failed API requests
 
-Form Validation - Test input validation and error states
+- **Form Validation - Test input validation and error states
 
-Run tests with:
+##📱 Responsive Design
+  - **Mobile First - Optimized for small screens
 
-bash
-npm test
-📱 Responsive Design
-Mobile First - Optimized for small screens
+  - **Tablet Friendly - Adaptive layouts for medium screens
 
-Tablet Friendly - Adaptive layouts for medium screens
+  - **Desktop Optimized - Full-featured experience on large screens
 
-Desktop Optimized - Full-featured experience on large screens
-
-🚀 Deployment
+## 🚀 Deployment
 The project is configured for easy deployment on Vercel:
 
-Push to GitHub
+- ** Push to GitHub
 
-Connect repository to Vercel
+- ** Connect repository to Vercel
 
-Automatic deployments on main branch updates
+- ** Automatic deployments on main branch updates
 
-📝 Submission Details
+##📝 Submission Details
 This project was developed as part of the A2SV Technical Interview process, demonstrating:
 
 Clean Code Architecture - Modular, reusable components
