@@ -3,6 +3,7 @@ import SellIcon from '@mui/icons-material/Sell';
 import type { Food } from "@/services/api"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button"
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 
 interface FoodCardProps {
   food: Food
@@ -25,26 +26,32 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
 
   return (
     <article
-      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-200"
+      className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg hover:scale-103 transition-transform transition-shadow duration-200"
+
       data-test-id="food-card"
     >
       {/* Image Container with Price Badge */}
-      <div className="relative overflow-hidden bg-gray-200 aspect-square">
-        <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-2 rounded-lg font-bold text-sm z-10 flex items-center gap-1">
-           <SellIcon style={{ fontSize: 20, color: '#fff' }} />${displayPrice}
-        </div>
+      <div className="relative overflow-hidden aspect-square">
+        
+        {/* Food Image */}
+          <img
+            src={foodImage}
+            alt={foodName}
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/diverse-food-spread.png"
+            }}
+          />
 
+          
+          <div className="absolute top-4 left-4 bg-orange-500 text-white px-3 py-2 rounded-lg font-bold text-sm flex items-center gap-1">
+            <SellIcon style={{ fontSize: 20, color: '#fff' }} />${displayPrice}
+          </div>
+  
+     
 
-      {/* Food Image */}
-        <img
-          src={foodImage}
-          alt={foodName}
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = "/diverse-food-spread.png"
-          }}
-        />
       </div>
+
 
       {/* Card Content */}
       <div className="p-4">
@@ -60,33 +67,42 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
                 (e.target as HTMLImageElement).src = "/cozy-italian-restaurant.png"
               }}
             />
-
-            {/* Food Name */}
-            <h3 className="font-bold text-gray-900 text-sm truncate" title={foodName}>
-              {foodName}
-            </h3>
+            <div className=''>
+              {/* Food Name */}
+                <div>
+                    <h3 className="font-bold text-gray-900 text-sm truncate" title={foodName}>
+                      {foodName.length > 24 ? foodName.slice(0, 23) + "..." : foodName}
+                     </h3>
+                </div>
+                
+                <div
+                className="text-yellow-500 text-sm font-medium flex-shrink-0 flex items-center gap-1"
+                data-test-id="food-rating"
+              >
+                ⭐ {foodRating.toFixed(1)}
+              </div>
           </div>
 
           {/* Rating */}
-          <span
-            className="text-yellow-500 text-sm font-medium flex-shrink-0 flex items-center gap-1"
-            data-test-id="food-rating"
-          >
-            ⭐ {foodRating.toFixed(1)}
-          </span>
+
+
+
+            </div>
+            
 
           {/* Three-dot Menu */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="sm" className="h-6 w-6 p-0 hover:bg-gray-100 flex-shrink-0">
-                <span className="text-gray-600 font-bold text-lg">•••</span>
+              <Button variant="ghost" size="sm" className="h-1 w-2 p-0 hover:bg-gray-100 flex-shrink-0">
+                <MoreVertIcon className="text-gray-600 text-lg cursor-pointer mt-[-16px]" />
+
               </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-              <DropdownMenuItem onClick={() => onEdit(food)} data-test-id="food-edit-btn">
+              <DropdownMenuItem onClick={() => onEdit(food)} data-test-id="food-edit-btn " className='text-orange-600 bg-gray-100 hover:text-black hover:bg-gray-200 border-b border-gray-300'>
                 Edit
               </DropdownMenuItem>
-              <DropdownMenuItem onClick={() => onDelete(food)} data-test-id="food-delete-btn" className="text-red-600">
+              <DropdownMenuItem onClick={() => onDelete(food)} data-test-id="food-delete-btn" className="text-red-600 hover:text-black hover:bg-gray-200">
                 Delete
               </DropdownMenuItem>
             </DropdownMenuContent>
@@ -94,7 +110,7 @@ export default function FoodCard({ food, onEdit, onDelete }: FoodCardProps) {
         </div>
 
         <span
-          className={`inline-block text-xs font-medium px-3 py-1.5 rounded-lg ${
+          className={`inline-block text-xs font-medium px-3 py-1.5 rounded-xl mt-2 ${
             restaurantStatus === "Open Now"
               ? "bg-green-100 text-green-700"
               : "bg-orange-100 text-orange-600 font-semibold"
