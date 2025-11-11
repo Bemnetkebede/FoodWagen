@@ -33,28 +33,21 @@ A modern, responsive food management web application built with Next.js and Type
 - **Deployment**: Vercel
 
 ## 📦 Installation
-
-1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/foodwagen.git
-   cd foodwagen
-     Install dependencies
-2, **Install dependencies**
+      # Clone the repository
+      git clone https://github.com/your-username/foodwagen.gtk
+      cd foodwagen
+      
+      # Install dependencies
       npm install
+      
+      # Run the development server
+      npm run dev
+  ```
 
-3, **Run the development server**
-   npm run dev
-   bash
-   npm install
-   Run the development server
 
-   bash
-   npm run dev
-   Open your browser
-   Navigate to http://localhost:3000
-
-🎯 Project Structure
-       src/
+##🎯 Project Structure
+       ##src/
          ├── app/                 # Next.js App Router pages
          ├── components/
          │   ├── ui/             # Reusable UI components
