@@ -46,22 +46,24 @@ A modern, responsive food management web application built with Next.js and Type
   ```
 
 
-##🎯 Project Structure
-     src/
-      ├── app/                    # Next.js App Router pages
-      ├── components/
-      │   ├── ui/                # Reusable UI components
-      │   ├── add-modal.tsx      # Add food modal
-      │   ├── edit-modal.tsx     # Edit food modal
-      │   ├── delete-modal.tsx   # Delete confirmation modal
-      │   ├── food-card.tsx      # Food item card component
-      │   └── footer.tsx         # Site footer
-      ├── services/
-      │   └── api.ts             # API service layer
-      ├── types/
-      │   └── index.ts           # TypeScript type definitions
-      └── tests/                 # Test files
+## 🎯 Project Structure
 
+```
+src/
+├── app/                    # Next.js App Router pages
+├── components/
+│   ├── ui/                # Reusable UI components
+│   ├── add-modal.tsx      # Add food modal
+│   ├── edit-modal.tsx     # Edit food modal
+│   ├── delete-modal.tsx   # Delete confirmation modal
+│   ├── food-card.tsx      # Food item card component
+│   └── footer.tsx         # Site footer
+├── services/
+│   └── api.ts             # API service layer
+├── types/
+│   └── index.ts           # TypeScript type definitions
+└── tests/                 # Test files
+```
 ##🔧 API Integration
 FoodWagen integrates with a mock API providing full CRUD operations:
 
