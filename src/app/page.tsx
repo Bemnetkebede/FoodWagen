@@ -5,7 +5,7 @@ import ShoppingBagIcon from '@mui/icons-material/ShoppingBag';
 import TwoWheelerIcon from '@mui/icons-material/TwoWheeler';
 import { useState, useEffect } from "react"
 import { fetchFoods, searchFoods, type Food } from "@/services/api"
-import { Footer } from "@/components/footer"
+import { Footer } from "@/components/Footer"
 import FoodCard from "@/components/food-card"
 import { DeleteModal } from "@/components/delete-modal"
 import { EditModal } from "@/components/edit-modal"
@@ -15,11 +15,9 @@ import { Input } from "@/components/ui/input"
 import Image from 'next/image';
 import Image1 from '../../public/Images/img1.png';
 import Image2 from '../../public/Images/img2.png'
-
 import { Spinner } from "@/components/ui/spinner"
 
 const ITEMS_PER_PAGE = 8
-
 export default function Page() {
   const [allFoods, setAllFoods] = useState<Food[]>([])
   const [displayedFoods, setDisplayedFoods] = useState<Food[]>([])
