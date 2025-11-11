@@ -47,6 +47,7 @@ A modern, responsive food management web application built with Next.js and Type
 
 
 ##🎯 Project Structure
+     ---
        ##src/
          ├── app/                 # Next.js App Router pages
          ├── components/
@@ -61,6 +62,7 @@ A modern, responsive food management web application built with Next.js and Type
          ├── types/
          │   └── index.ts        # TypeScript type definitions
          └── tests/              # Test files
+      ---
 
 ##🔧 API Integration
 FoodWagen integrates with a mock API providing full CRUD operations:
@@ -82,22 +84,22 @@ Form Validation Rules
 - ** Status Options: "Open Now" or "Closed" only
 
 ## Error Messages
-Clear, user-friendly error messages
+ -Clear, user-friendly error messages
 
-Real-time validation feedback
+ -Real-time validation feedback
 
-Proper error element IDs (food-name-error, food-rating-error, etc.)
+-Proper error element IDs (food-name-error, food-rating-error, etc.)
 
 ## 🎨 Design Features
-Modern UI - Clean, card-based design following Figma specifications
+ - Modern UI - Clean, card-based design following Figma specifications
 
-Hover Animations - Smooth 150ms ease-out transitions
+- Hover Animations - Smooth 150ms ease-out transitions
 
-Entry Animations - 300ms slide-up effects on load
+- Entry Animations - 300ms slide-up effects on load
 
-Consistent Styling - Orange (#FFB30E) primary color theme
+- Consistent Styling - Orange (#FFB30E) primary color theme
 
-Typography - Clear hierarchy with proper font weights
+- Typography - Clear hierarchy with proper font weights
 
 ## 🧪 Testing
 - **Comprehensive test coverage including:
@@ -127,21 +129,14 @@ The project is configured for easy deployment on Vercel:
 - ** Automatic deployments on main branch updates
 
 ##📝 Submission Details
-This project was developed as part of the A2SV Technical Interview process, demonstrating:
-
-Clean Code Architecture - Modular, reusable components
-
-TypeScript Best Practices - Strong typing throughout
-
-API Integration - Robust error handling and loading states
-
-User Experience - Intuitive interactions and feedback
-
-Accessibility - Semantic HTML and proper labeling
-
-Built with Next.js, TypeScript, and Tailwind CSS
-
-text
+This project was developed as part of the A2SV Technical Interview process, 
+- demonstrating: Clean Code Architecture
+- Modular, reusable components TypeScript Best Practices
+- Strong typing throughout API Integration 
+-  Robust error handling and loading states User Experience 
+-  Intuitive interactions and feedback Accessibility
+-  Semantic HTML and proper labeling
+-  Built with Next.js, TypeScript, and Tailwind CSS text
 
 **Key improvements made:**
 - ✅ Proper Markdown formatting with consistent headers
